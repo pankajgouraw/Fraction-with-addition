@@ -10,8 +10,13 @@ body {
     /*background-image: url('img/bodybg.png');*/
     background-size: cover;
     font-family: sans-serif;
+    caret-color: transparent;
 }
 
+
+#playAgain{
+    display: none;
+}
 
 .wrapper{max-width:960px;margin:0px auto;position: relative;}
 
@@ -19,16 +24,21 @@ body {
 flex-grow: 1;
 text-align: center;
 font-size: 28px;
-color: #fff;
+color: #000;
 margin-top:0px;
+position: relative;
+position: absolute;
+left:50%;
+transform: translate(-50%);
 }
-#header .logo {margin: 0px auto;display: flex;align-items: center;}
+#header .logo {margin: 0px auto; justify-content:flex-end; display: flex;align-items: center; position: relative;}
 #header {padding: 15px 15px 15px 15px;}
-#innerWrapper{padding: 15px; text-align: center; overflow: hidden; position: relative;}
+#innerWrapper{padding: 15px; text-align: center; position: relative;}
 #innerWrapper h2{font-weight: bold;}
 
 #instruction{
-	/*margin-bottom:30px;*/
+	margin-bottom:30px;
+    display: none;
 }
 
 .buttons{
@@ -40,7 +50,10 @@ margin-top:0px;
 	margin-left: 30px;
 }
 
-.buttons button{
+.buttons button:focus{
+    background: green;
+}
+/*.buttons button{
 font-weight: bold;
 padding: 1px 5px;
 cursor: pointer;
@@ -48,13 +61,14 @@ background-size: 100% 100%;
 font-family: sans-serif;
 font-size:18px;
 border: 2px solid #3F51B5;
-    background-image: radial-gradient(#fffefe, #009688);
+    background-image: radial-gradient(#000efe, #009688);
         border-radius: 13px;
     margin-bottom: 10px;
-}
+}*/
 
 
-
+#next{display: none;}
+/*#reset{display: bloc;}*/
 
 
 
@@ -76,60 +90,174 @@ border: 2px solid #3F51B5;
 .wellDone h3{
 	    font-weight: bold;
     font-size: 40px;
-    text-shadow: 2px 2px 3px #000;
-    color: #fff;
-    font-style: oblique;
+    color: #000;
 }
 .errors h3{
 	    font-weight: bold;
     font-size: 40px;
-    text-shadow: 2px 2px 3px #000;
-    color: #fff;
-    font-style: oblique;
+    color: #000;
 }
 
 
-.questContainer .question{display: flex;align-items: center;}
-.singleFraction{}
-.noOne{}
+.questContainer .question{    display: flex;
+    align-items: center;
+}
 .straightLine{
 	width: 50px;
-height: 1px;
-background:#fff;
+height: 2px;
+background:#000;
 }
-.questContainer .noTwo{}
-.questContainer .plusSign{}
-.questContainer {display: flex;margin-top: 50px; justify-content: center;}
+.questContainer .noTwo{
+	display: flex;
+justify-content: center;
+}
+.questContainer .plusSign{
+    margin-top:-3px;
+}
+.questContainer {
+    display: flex;
+    /*margin-top: 50px;*/
+    justify-content: center;
+    align-items: center;
+    margin-top:50px;
+}
 
 .ansContainer{display: flex; align-items: center;}
 
 .fontSize{
 font-size: 34px;
-color:#fff;
+color:#000;
 }
 
 .ansContainer .straightLine{
-	width: 160px;
+	/*width: 160px;*/
 margin: 10px 0px;
 }
 
 .sign{
 	margin: 0px 10px;
 }
-
+.lcm{}
 .ansContainer .drop{
-	border: 1px solid;
-	width: 50px;
+	border: 2px solid;
 	display: inline-block;
-	height: 40px;
+	padding: 0px 5px;
+	text-align: left;
+}
+.button button{
+
+}
+#afterDevideAdd{
+	display: flex;
+/*margin-top: 6px;*/
+justify-content: center;
+}
+
+#ansTop{
+display: flex;
+/*margin-top: 6px;*/
+justify-content: center;
 }
 
 .question .plusSign:last-child{
 	display: none;
 }
+#afterDevideAdd .plusSign:last-child{
+	display: none;
+}
+#yourScore{display: none;}
+.optionContainer{
+margin-top: 50px;
+margin-bottom: 50px;
+}
+.optionContainer ul{
+	    margin-top: 0px;
+padding: 0px;
+display: flex;
+justify-content: center;
+
+}
+.optionContainer ul li{list-style: none;padding: 5px 10px;}
+.optionContainer ul li span{ cursor: pointer; }
+
+.buttonContainer button:active{background: #0242362e; outline: none;}
+.buttonContainer{
+    margin: 0 auto;
+    max-width: 200px;
+}
+#showAns{display: none;}
+.buttonContainer button{
+     outline: none;
+   font-weight: bold;
+    font-size: 15px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 4px;
+    background: #f4f4f4; 
+    width:100%;
+    margin-bottom:10px;
+}
+.score{display: flex; display: none;
+justify-content: center;
+margin-bottom:30px;
+}
+.score p{
+   font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 20px; 
+}
+/*.score > div{
+border: 2px solid #000;
+padding: 10px;
+border-radius: 50%;
+text-align: center;
+height: 120px;
+width: 120px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size:40px;
+margin: 0px auto;
+border-radius: 50%; }*/
+.score div .totalQuest{
+    /*color: green;*/
+}
+.score div .devider{
+    width: 100px;
+height: 2px;
+background:
+#000;
+}
+.score div .youDidCorrect{ color: green;}
+
+.ansContainer .singleFraction{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 990px) {
+	.questContainer{
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+    .questContainer .question{    
+    margin-bottom:20px;}
+}
 
 @media screen and (max-width: 768px) {
-	
+    .ansContainer {
+        flex-direction: column;
+
+    }  
+    .ansContainer .singleFraction{
+        margin-bottom: 20px;
+    }
+    .optionContainer{
+        margin-top:0px;
+        margin-bottom:20px;
+    }
 }
 
 
@@ -141,9 +269,15 @@ margin: 10px 0px;
 	.logoWrapper img{width:100px;}
 	#header .logo h3{font-size:20px;}
 	#header{padding-bottom:0px; margin-bottom:0px;}
-	.buttons button{font-size: 11px; }
-
 } 
 
-
+@media screen and (max-width: 470px) {
+.fontSize{
+    font-size: 23px;
+}
+.sign {
+    margin:0px 5px;
+}
+.optionContainer ul li{padding: 0px 8px;}
+}
 /*  // media quesry end here...*/

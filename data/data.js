@@ -1,13 +1,16 @@
 
 const headerText = 'Fraction';
-const headerInstructionColor = 'white';
+const headerInstructionColor = '#000';
 const Instruction = 'Fraction with addition';
-const bg = 'img/bodybg.jpg';
-let   numeratorMin = 10;
-let   numeratorMax =99;
+const bg = 'linear-gradient(rgb(255, 252, 252), rgb(132, 175, 132))';	
+let   numeratorMin = 1;
+let   numeratorMax = 10;
 let   denominatorMin = 1;
-let   denominatorMax = 20;
-let noOfFraction = 2;
+let   denominatorMax = 10;
 
+// let   numeratorMin = 1;
+// let   numeratorMax =10;
+// let   denominatorMin = 1;
+// let   denominatorMax = 10;
 
-
+let   noOfFraction =2;
